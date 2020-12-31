@@ -1,0 +1,209 @@
+* {
+box-sizing: border-box;
+}
+
+html, body {
+    background: #fff;
+    padding: 0px;
+    padding-left: 6%;
+    padding-right: 6%;
+    scroll-behavior: smooth;
+    margin-top: 20pt;
+    padding-bottom: 50pt;
+}
+
+body {
+    max-width: 120em;
+    width: 90%;
+    margin: auto 0;
+}
+
+.author {
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+    font-size: 15pt;
+    color: rgb(122, 122, 122);
+    padding: 0;
+    margin-top: 10pt;
+    margin-bottom: 2pt;
+    text-align: center;
+}
+
+h1, h2, h3{
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 22pt;
+    margin-bottom: 0;
+}
+
+h2{
+    font-size: 18pt;
+    margin-top: 24pt;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+    padding-left: 3%;
+    padding-right: 3%;
+    color:rgb(48, 48, 48);
+}
+
+ul, ol{
+    padding-left: 4%;
+}
+
+li, b{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+    color:rgb(48, 48, 48);
+    margin-bottom: 8pt;
+}
+
+a:link, a:visited{
+    color:rgb(239,86,81);
+    text-decoration: none;
+}
+
+/*
+CREATING GRID
+*/
+#vis1{
+    display:grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: "buttons" "chart";
+}
+
+#vis2{
+    display:grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: "buttons" "chart";
+}
+
+#buttons1{
+    grid-area: buttons;
+    justify-self: center;
+    padding-bottom: 10px;
+}
+
+#buttons2{
+    grid-area: buttons;
+    justify-self: center;
+    padding-bottom: 10px;
+}
+
+
+/*
+CHART PROPERTIES
+*/
+#chart1{
+    grid-area: chart;
+    width: 95%;
+    height: 600px;
+    justify-self: center;
+
+    position: relative;
+    align-self: center;
+
+    margin-bottom: 10px;
+}
+
+#chart2{
+    width: 95%;
+    height: 720px;
+    justify-self: center;
+
+    position: relative;
+    align-self: center;
+
+    margin-bottom: 10px;
+}
+
+.dashedLines{
+    stroke-dasharray: 5 2;
+    opacity: 0.7;
+}
+
+.axis, .axisLabel, .titleLabel, .legendText{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.axis1, .axis2, .axis3, .axis4, .axis5{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.axis, .axis1, .axis2, .axis3, .axis4, .axis5{
+    color: #23335f;
+}
+
+.axisLabel{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.titleLabel{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.legendText{
+    font-size: 11px;
+}
+
+.tooltip{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    visibility: hidden;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10pt;
+    background-color: rgba(236, 236, 236, 0.85);
+    padding: 4px;
+    padding-left: 10px;
+    pointer-events: none;
+    width: 200px;
+    border-radius: 6px;
+}
+
+.tooltip1{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    visibility: hidden;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10pt;
+    background-color: rgba(236, 236, 236, 0.85);
+    padding: 4px;
+    padding-left: 10px;
+    pointer-events: none;
+    width: 240px;
+    border-radius: 6px;
+}
+
+button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    margin-top: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: none;
+    border-radius: 4px;
+    background-color:grey30;
+    }
+
+.active, button:hover{
+    color: aliceblue;
+    background-color:#23335f;
+    border: none;
+    outline: none;
+    }
+
+#vis1 .domain{
+    visibility: hidden;
+}

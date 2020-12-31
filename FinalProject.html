@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./style/FInalProject.css">
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>The Shifting Preference of Video Game Market</h1>
+        <p class="author">Tingsong Ou | 歐 庭菘</p>
+        <p class="author">12/16/2020</p>
+
+        <p><br>
+        What a semester! I couldn't imagine creating so many interactive visualizations with JavaScript, HTML, and CSS just three months ago. For this final project, I want to go one step further; I try to get rid of the standard charts we already familiar with. What I want to create here are visualizations with simple appearance but convey rich information.<br><br>This project aims to analyze how the market's preference shifts and differs between periods and specific markets. The key factor in exploring this question is sales. The dataset I choose is video games' sales from 1980 to 2017; it is a comprehensive dataset that records each game's company, platform, release year, sales in different regions, critics' rates, etc. This dataset comes from <a href="https://www.kaggle.com/gregorut/videogamesales" target="_blank">Kaggle</a>, and it is also one of the most popular datasets on that website.</p>
+
+        <div id = part1>
+            <h2>Preferences in Periods</h2>
+
+            <p>The first visualization is a tessellation of circles. The rows represent the top 10 sales games in each regional market within the selected time range. The circle with a name below is the game, and each circle's size(radius) indicates the sales amount.	I separate the years into four periods according to the revolutions that took place in the video game industry:</p>
+            <ul>
+                <li><b>1980 - 1990</b> was the first period when the video game debuted on the commercial market. 8-bit image is the only game format, and there were few competitors in the market at that time.</li>
+
+                <li><b>1990 - 2000</b> was a blooming period. During that time range, computer technology contributes to the development of game design and console manufacture. The game industry started to enter the 64-bit era; new technology contributes to image quality improvement and game genre diversification. </li>
+
+                <li><b>2000 - 2010</b> was a period that companies started to explore interactive ways of gamming; the most noticeable technology applied was motion sensing. Simultaneously, the three video game giants, Nintendo, Sony, and Microsoft, established their unchallengeable position in the industry. </li>
+
+                <li><b>2010 - 2018</b> witnesses a significant leap in image quality. The resolution of video game image quality increases from 720p to 4k within eight years. But unfortunately, the dataset doesn't include the video game sales on PS4 and Xbox One; the two mainstream game consoles achieved a high resolution that impacted the whole industry.</li>
+            </ul>
+
+            <p><i>Tips: Please click the period bottons below to view the sales data in each specific year range, and hover over each circle to check the detailed information.</i></p>
+
+            <section id = "vis1">
+                <div id = "buttons1">
+                    <button class = "period active" value = "a">1980-1990</button>
+                    <button class = "period" value = "b">1990-2000</button>
+                    <button class = "period" value = "c">2000-2010</button>
+                    <button class = "period" value = "d">2010-2018</button>
+                </div>
+                <div id = "chart1"></div>
+                <script src="JS/chart1.js"></script>
+            </section>
+
+            <p>According to the tessellation above, we can infer that technology development profoundly influenced video game market preference:</p>
+            <ol>
+                <li>In the first period, the 8-bit format is the only available display technology the video game makers can use. That technology is good at making the 2D and pixelized image, which has the advantages in creating platform games. In this situation, the platform game dominated the market then.</li>
+                <li>The creation of the handheld game console, especially Game Boy made by Nintendo, enables consumers to play games here and there. Coincidently, the phenomenon game Pokemon released on GB that makes the game and the console dominated the whole decades from 1990 to 2000.</li>
+                <li>The game with interactive technology, including motion sensing and screen touch, took the video game market's major parts from 2000 to 2010. The two most outstanding game consoles are Wii and DS, both of which belong to Nintendo. The Wii encourages gamers to leave their sofa and control the roles in games by body movement; the touchscreen on DS enables gamers to play games with a pen, diversifying the inputs like writing, path drawing, clicking, etc.</li>
+                <li>The graphic processor's development helps realize the super delicate image greatly contributes to first-person games, demanding image quality. Genres include shooter, action, and role-playing benefits a lot from image quality improvement; these genres took the majority of market share since 2010.</li>
+            </ol>
+            <p>Moreover, this visualization tells more information than mentioned above, like different markets' preference and their contribution to the global market.  But we don't expand too much; let's move on to the next visualization. </p>
+        </div>
+
+        <div id = part2>
+            <h2>Preferences in Markets</h2>
+            <p>The second visualization is to pick some best-selling games, show the relationship between global sales and regional sales. There are about 16,000 games in the dataset, but most of them are redundant due to their low sales will not help but harms a clear data visualization, so the first step is to filter the bulk dataset. I only kept those games with sales higher than 15 million dollars; only 28 games remaining. Then I chose to place both sales data, global one and regional one, on the same chart because this method gives the reader a straightforward way of sensing the difference between a game's general popularity and regional popularity. Some games might have very high sales, but their sales might be shocking low in several regions, as people in different regions could have utterly different preferences on game types.</p>
+
+            <p>I chose the scatter plot for the visualization because each data can be presented as a dot on the chart; I believe this method clearly shows each game's positioning on the scatterplot. I also shaded the circles according to their platforms to help readers easily distinguish one from another. Then, I drew a dashed line between each game's global and regional sales dots to make the related data look more cohesive; it seems like the regional one is "hanging" by the global one.</p>
+
+            <p><i>Tips: Please click the region bottons below to view the sales data in each specific area, and hover over each circle to check the detailed information.</i></p>
+
+            <section id = "vis2">
+                <div id = "buttons2">
+                    <button class = "region active" value = "JP">Japan Sales</button>
+                    <button class = "region" value = "NA">North America Sales</button>
+                    <button class = "region" value = "EU">Europe Sales</button>
+                    <button class = "region" value = "Other">Sales of the Rest of the World</button>
+                </div>
+                <div id="chart2"></div>
+                <script src="JS/chart2.js"></script>
+            </section>
+
+            <p>In several extreme examples, like <i>Duck Hunt</i>, <i>Wii Sports</i>, and <i>Super Mario Bros.</i>, they have high global sales but only have negligible sales in the Japanese market. These comparisons clearly represent a significant difference in game preference in different markets. Maybe reaching this conclusion is somewhat hasty, as I didn't put the population, which is an essential factor, into consideration. </p>
+
+            <p>The second story this visualization tells is how much each regional market contributes to the global market; the shorter the dashed line, the smaller gap between regional sales and global sales. Apparently, the North American market and the European market are the driving force of the global video game industry; Japan, considering its relatively small population but contributes a noticeable share, is still a non-negligible market. And something interesting, most of the game consoles on the visualization are made by Japanese companies.</p>
+
+            <script>
+                //Button active scripts
+                //reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element
+                let vis1 = document.getElementById("buttons1");
+                let btns1 = vis1.getElementsByClassName("period");
+                for (let i = 0; i < btns1.length; i++) {
+                    btns1[i].addEventListener("click", function() {
+                    let current = vis1.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                    });
+                }
+
+                let vis2 = document.getElementById("buttons2");
+                let btns2 = vis2.getElementsByClassName("region");
+                for (let i = 0; i < btns2.length; i++) {
+                    btns2[i].addEventListener("click", function() {
+                    let current = vis2.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                    });
+                }
+            </script>
+        </div>
+
+        <div id = conclusion>
+            <h2>Conclusion</h2>
+            <p>Two visualizations unveil the changing preference of the video game market. Such changes could have several driving forces; technology and culture are two major factors that significantly influence the market's preference. Also, there might be a discrepancy between the global market and the regional market. Some games might be extremely popular in one market but cause no attention in another market. Analyzing such shifting preferences helps predicting the future market and making a good positioning.</p>
+        </div>
+    </body>
+
+
+</html>
